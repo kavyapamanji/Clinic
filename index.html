@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CarePoint Clinic</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div><h1>CarePoint Clinic</h1><p>Clinic Appointment Management System</p></div>
+  <span>Java • Spring Boot • JDBC • MySQL</span>
+</header>
+
+<main>
+<section class="stats">
+  <div><b id="doctorCount">0</b><small>Doctors</small></div>
+  <div><b id="patientCount">0</b><small>Patients</small></div>
+  <div><b id="appointmentCount">0</b><small>Appointments</small></div>
+</section>
+
+<section class="grid">
+<div class="card">
+<h2>Book Appointment</h2>
+<form id="appointmentForm">
+<select id="doctor" required></select>
+<select id="patient" required></select>
+<input id="date" type="date" required>
+<input id="time" type="time" required>
+<input id="reason" placeholder="Reason for visit" required>
+<button>Book Appointment</button>
+</form>
+</div>
+
+<div class="card">
+<h2>Register Patient</h2>
+<form id="patientForm">
+<input id="pname" placeholder="Patient name" required>
+<input id="email" type="email" placeholder="Email" required>
+<input id="phone" placeholder="Phone number" required>
+<input id="age" type="number" min="1" max="120" placeholder="Age" required>
+<button>Register Patient</button>
+</form>
+</div>
+</section>
+
+<section class="card">
+<div class="heading"><h2>Appointments</h2><button class="secondary" onclick="loadAll()">Refresh</button></div>
+<div class="tableWrap">
+<table><thead><tr><th>Date</th><th>Time</th><th>Doctor</th><th>Patient</th><th>Reason</th><th>Status</th><th>Action</th></tr></thead>
+<tbody id="appointments"></tbody></table>
+</div>
+<p id="message"></p>
+</section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
